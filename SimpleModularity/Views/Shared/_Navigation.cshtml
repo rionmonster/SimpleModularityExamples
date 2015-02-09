@@ -1,0 +1,21 @@
+﻿<!-- Basic Styling (add into a master CSS file referenced in the Parent Layout later) -->
+<style type="text/css">
+    nav.menu {width: 100%;background: #0071BC;}
+    nav.menu a { display: inline-block;width: 100px;padding: 6px;text-align: center;color: #FFF;text-decoration: none;}
+    nav.menu a:hover {background: #0093DE;}
+</style>
+<!-- Within the Navigation area, we will define our modules -->
+<nav class="menu">
+    @if (Application.ModulesEnabled["Blue"])
+    {
+        <a href="@Url.Action("Index","Blue", new { area = "Blue" })">Blue</a>
+    }
+    @if (Application.ModulesEnabled["Red"])
+    {
+        <a href="@Url.Action("Index", "Red", new { area = "Red" })">Red</a>
+    }
+    @if (Application.ModulesEnabled["Yellow"])
+    {
+        <a href="@Url.Action("Index", "Yellow", new { area = "Yellow" })">Yellow</a>
+    }
+</nav>
